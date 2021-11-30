@@ -1,5 +1,6 @@
 #include <jni.h>
 #include <string>
+#include <curl.h>
 
 extern "C"
 JNIEXPORT void JNICALL
