@@ -15,5 +15,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "helloC"
+rootProject.name = "easemob-facade"
 include ':app'
+include ':easemoblib'

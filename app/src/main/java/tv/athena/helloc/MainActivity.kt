@@ -2,14 +2,13 @@ package tv.athena.helloc
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import com.salton123.easemob.Facade
 import tv.athena.helloc.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    val facade = Facade()
+//    val facade = Facade()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -17,9 +16,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Example of a call to a native method
-//        binding.sampleText.text = facade.version()
+        binding.sampleText.text = Facade.version()
         binding.sampleText.setOnClickListener {
-            facade.createAccount("123456", "111111")
+            Facade.createAccount("123456", "111111")
         }
     }
 
