@@ -5,7 +5,7 @@ package com.salton123.easemob
  * Author:
  * Description:
  */
-object Facade {
+class Facade {
     external fun createAccount(username: String, password: String)
-    external fun version(): String
+//    external fun version(): String
 }

@@ -9,7 +9,7 @@ import tv.athena.helloc.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
+    val facade = Facade()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -17,19 +17,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Example of a call to a native method
-        binding.sampleText.text = Facade.version()
+//        binding.sampleText.text = facade.version()
+        binding.sampleText.setOnClickListener {
+            facade.createAccount("123456", "111111")
+        }
     }
 
     /**
      * A native method that is implemented by the 'helloc' native library,
      * which is packaged with this application.
      */
-    external fun stringFromJNI(): String
+//    external fun stringFromJNI(): String
 
     companion object {
         // Used to load the 'helloc' library on application startup.
         init {
-            System.loadLibrary("helloc")
+            System.loadLibrary("easemob-facade")
         }
     }
 }
